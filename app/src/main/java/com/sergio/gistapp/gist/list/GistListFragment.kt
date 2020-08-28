@@ -23,7 +23,6 @@ import retrofit2.converter.gson.GsonConverterFactory
  * create an instance of this fragment.
  */
 class GistListFragment : Fragment() {
-
     private val gistListViewModel: GistListViewModel by viewModel()
 
     private lateinit var binding: FragmentGistListBinding
@@ -40,5 +39,4 @@ class GistListFragment : Fragment() {
 
         return binding.root
     }
-
 }
