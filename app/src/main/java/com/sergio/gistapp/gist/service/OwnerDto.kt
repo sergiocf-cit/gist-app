@@ -1,3 +1,11 @@
 package com.sergio.gistapp.gist.service
 
-data class OwnerDto (val login: String, val avatar_url: String)
+import com.sergio.gistapp.gist.shared.Owner
+
+data class OwnerDto(val login: String, val avatar_url: String)
+
+internal fun OwnerDto.toModel() = Owner(
+    this.login,
+    this.avatar_url
+
+)

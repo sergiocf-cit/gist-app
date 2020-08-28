@@ -22,7 +22,7 @@
         android:id="@+id/appText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gist App"
+        android:text="@string/splash_title"
         android:textColor="@android:color/white"
         android:textSize="@dimen/spash_textsize"
         android:textStyle="bold"

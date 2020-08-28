@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="spash_textsize">30sp</dimen>
+    <dimen name="gist_card_logo_size">50dp</dimen>
+    <dimen name="gist_card_margin">16dp</dimen>
+    <dimen name="gist_card_radius">9dp</dimen>
+    <dimen name="gist_card_elev">1dp</dimen>
+    <dimen name="gist_card_material">25dp</dimen>
+
 </resources>
