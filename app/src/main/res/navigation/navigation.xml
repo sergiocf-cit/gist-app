@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/gistListFragment"
-        android:name="com.sergio.gistapp.gist.GistListFragment"
+        android:name="com.sergio.gistapp.gist.list.GistListFragment"
         android:label="fragment_gist_list"
         tools:layout="@layout/fragment_gist_list" />
 </navigation>
