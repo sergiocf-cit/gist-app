@@ -1,11 +1,17 @@
 # gist-app
-A simple Android app following the best practices. 
+A simple Android app following the best and new practices recommended by Jetpack. 
 
 This app was develop using Visual Studio 4.0
 
-
-# Main frameworks
+# Main architecture decisions
 
 - Navigation Component: open navigation.xml to see Navigation Graph
-- Koin DI  
+- Koin for DI  
 - Retrofit with Coroutines(I'm used to RXJava but this time I decided to try)
+- Picasso to load an image into ImageView
+- LiveData and MVVM to separate responsibilities for each layer
+- There are 3 type of "POJOS":
+    DTO for API
+    Entity for Room
+    Without prefix per instance(Gist) for the model
+

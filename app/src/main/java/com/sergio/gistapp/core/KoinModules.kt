@@ -5,7 +5,7 @@ import com.sergio.gistapp.gist.list.GistListViewModel
 import com.sergio.gistapp.gist.repository.GistRepository
 import com.sergio.gistapp.gist.service.DynamicFileDto
 import com.sergio.gistapp.gist.service.GistApiService
-import com.sergio.gistapp.gist.shared.DynamicDtoDeserializer
+import com.sergio.gistapp.gist.shared.DynamicFileDtoDeserializer
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -26,7 +26,7 @@ val appModule = module {
                 GsonConverterFactory.create(
                     GsonBuilder().registerTypeAdapter(
                         DynamicFileDto::class.java,
-                        DynamicDtoDeserializer()
+                        DynamicFileDtoDeserializer()
                     )
                         .create()
                 )

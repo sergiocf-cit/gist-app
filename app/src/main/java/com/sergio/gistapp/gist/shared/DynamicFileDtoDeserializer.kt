@@ -7,7 +7,7 @@ import com.sergio.gistapp.gist.service.DynamicFileDto
 import com.sergio.gistapp.gist.service.FileDto
 import java.lang.reflect.Type
 
-class DynamicDtoDeserializer : JsonDeserializer<DynamicFileDto> {
+class DynamicFileDtoDeserializer : JsonDeserializer<DynamicFileDto> {
     override fun deserialize(
         json: JsonElement?,
         typeOfT: Type?,
