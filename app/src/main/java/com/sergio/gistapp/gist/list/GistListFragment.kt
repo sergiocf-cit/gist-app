@@ -6,9 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.sergio.gistapp.R
 import com.sergio.gistapp.databinding.FragmentGistListBinding
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -19,8 +22,9 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
  */
 class GistListFragment : Fragment() {
     private val gistListViewModel: GistListViewModel by viewModel()
-
     private lateinit var binding: FragmentGistListBinding
+    private var searchJob: Job? = null
+    private val adapter = GistListAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,13 +32,27 @@ class GistListFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_gist_list, container, false)
 
-        val adapter = GistListAdapter()
-        binding.gistList.adapter = adapter
+        initAdapter()
 
-        gistListViewModel.gist.observe(viewLifecycleOwner, Observer {
-            adapter.data = it
-        })
+        search("")
 
         return binding.root
+    }
+
+    private fun initAdapter() {
+        binding.gistList.adapter = adapter.withLoadStateHeaderAndFooter(
+            header = GistLoadStateAdapter { adapter.retry() },
+            footer = GistLoadStateAdapter { adapter.retry() }
+        )
+    }
+
+    private fun search(userName: String) {
+        // Make sure we cancel the previous job before creating a new one
+        searchJob?.cancel()
+        searchJob = lifecycleScope.launch {
+            gistListViewModel.getAll(userName).collectLatest {
+                adapter.submitData(it)
+            }
+        }
     }
 }

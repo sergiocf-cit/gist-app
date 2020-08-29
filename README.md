@@ -7,11 +7,13 @@ This app was develop using Visual Studio 4.0
 
 - Navigation Component: open navigation.xml to see Navigation Graph
 - Koin for DI  
-- Retrofit with Coroutines(I'm used to RXJava but this time I decided to try)
+- Retrofit with Coroutines(I'm used to RXJava but this time I decided to give it a try)
 - Picasso to load an image into ImageView
-- LiveData and MVVM to separate responsibilities for each layer
+- MVVM to separate responsibilities for each layer
+- Lifecycle and LiveData
 - There are 3 type of "POJOS":
     DTO for API
     Entity for Room
     Without prefix per instance(Gist) for the model
+- Android Paging for infinite scrolling
 

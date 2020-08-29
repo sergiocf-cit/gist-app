@@ -4,4 +4,5 @@
     <string name="gist_card_save">Save</string>
     <string name="logo">Logo</string>
     <string name="splash_title">Gist App</string>
+    <string name="lof_state_retry">Retry</string>
 </resources>

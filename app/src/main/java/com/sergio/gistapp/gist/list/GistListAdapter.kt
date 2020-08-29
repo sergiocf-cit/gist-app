@@ -1,24 +1,29 @@
 package com.sergio.gistapp.gist.list
 
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.paging.PagingDataAdapter
+import androidx.recyclerview.widget.DiffUtil
 import com.sergio.gistapp.gist.shared.Gist
 
-class GistListAdapter: RecyclerView.Adapter<GistListViewHolder>() {
-
-    var data = listOf<Gist>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
+class GistListAdapter: PagingDataAdapter<Gist, GistListViewHolder>(GIST_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GistListViewHolder {
         return GistListViewHolder.from(parent)
     }
 
-    override fun getItemCount() = data.size
-
     override fun onBindViewHolder(holder: GistListViewHolder, position: Int) {
-        holder.bind(data[position])
+        getItem(position)?.let {
+            holder.bind(it)
+        }
+    }
+
+    companion object {
+        private val GIST_COMPARATOR = object : DiffUtil.ItemCallback<Gist>() {
+            override fun areItemsTheSame(oldItem: Gist, newItem: Gist): Boolean =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: Gist, newItem: Gist): Boolean =
+                oldItem == newItem
+        }
     }
 }
