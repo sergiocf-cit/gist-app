@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="@string/splash_title"
         android:textColor="@android:color/white"
-        android:textSize="@dimen/spash_textsize"
+        android:textSize="@dimen/splash_text_size"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

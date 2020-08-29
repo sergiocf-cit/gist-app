@@ -5,4 +5,7 @@
     <string name="logo">Logo</string>
     <string name="splash_title">Gist App</string>
     <string name="lof_state_retry">Retry</string>
+    <string name="gist_detail_owner">Owner</string>
+    <string name="gist_detail_description">Description</string>
+    <string name="gist_detail_files">Files</string>
 </resources>

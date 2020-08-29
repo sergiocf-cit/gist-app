@@ -1,6 +1,7 @@
 package com.sergio.gistapp.core
 
 import com.google.gson.GsonBuilder
+import com.sergio.gistapp.gist.detail.GistDetailViewModel
 import com.sergio.gistapp.gist.list.GistListViewModel
 import com.sergio.gistapp.gist.repository.GistRepository
 import com.sergio.gistapp.gist.service.DynamicFileDto
@@ -18,6 +19,10 @@ const val BASE_URL = "https://api.github.com/"
 val appModule = module {
     viewModel {
         GistListViewModel(get())
+    }
+
+    viewModel {
+        GistDetailViewModel()
     }
 
     single {

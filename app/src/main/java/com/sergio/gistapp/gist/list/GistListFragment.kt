@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.sergio.gistapp.R
 import com.sergio.gistapp.databinding.FragmentGistListBinding
+import com.sergio.gistapp.gist.shared.Gist
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -24,7 +26,7 @@ class GistListFragment : Fragment() {
     private val gistListViewModel: GistListViewModel by viewModel()
     private lateinit var binding: FragmentGistListBinding
     private var searchJob: Job? = null
-    private val adapter = GistListAdapter()
+    private val adapter = GistListAdapter(GistClickListener { navigateToGistDetail(it) })
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,7 +49,6 @@ class GistListFragment : Fragment() {
     }
 
     private fun search(userName: String) {
-        // Make sure we cancel the previous job before creating a new one
         searchJob?.cancel()
         searchJob = lifecycleScope.launch {
             gistListViewModel.getAll(userName).collectLatest {
@@ -55,4 +56,11 @@ class GistListFragment : Fragment() {
             }
         }
     }
+
+    private fun navigateToGistDetail(gist: Gist) {
+        this.findNavController()
+            .navigate(GistListFragmentDirections.actionGistListFragmentToGistDetailFragment(gist))
+
+    }
 }
+

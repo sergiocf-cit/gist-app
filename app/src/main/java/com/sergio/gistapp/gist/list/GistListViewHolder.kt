@@ -2,7 +2,6 @@ package com.sergio.gistapp.gist.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.sergio.gistapp.databinding.GistCardBinding
 import com.sergio.gistapp.gist.shared.Gist
@@ -10,14 +9,13 @@ import com.squareup.picasso.Picasso
 
 class GistListViewHolder(private val binding:GistCardBinding): RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(gist: Gist) {
-        binding.ownerTextView.text = gist.owner.login
-        binding.typeTextView.text = gist.files[0].type
+    fun bind(gist: Gist, listener: GistClickListener) {
+        binding.gist = gist
+        binding.listener = listener
 
         Picasso.get().load(gist.owner.avatar_url)
             .into(binding.avatarImage)
 
-        binding.avatarImage
     }
 
     companion object {

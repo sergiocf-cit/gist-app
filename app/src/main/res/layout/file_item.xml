@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="file"
+            type="com.sergio.gistapp.gist.shared.File" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/filenameTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textSize="24sp"
+            android:text="@{file.filename}"
+            tools:text="main.js" />
+
+        <TextView
+            android:text="@{file.type}"
+            android:id="@+id/typeTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textSize="12sp"
+            tools:text="javascript" />
+
+    </LinearLayout>
+
+</layout>

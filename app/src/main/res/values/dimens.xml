@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="spash_textsize">30sp</dimen>
+    <dimen name="splash_text_size">30sp</dimen>
     <dimen name="gist_card_logo_size">50dp</dimen>
     <dimen name="gist_card_margin">16dp</dimen>
     <dimen name="gist_card_radius">9dp</dimen>
     <dimen name="gist_card_elev">1dp</dimen>
     <dimen name="gist_card_material">25dp</dimen>
-    <dimen name="load_state_textsize">24sp</dimen>
-
+    <dimen name="load_state_text_size">24sp</dimen>
+    <dimen name="gist_detail_image_size">100dp</dimen>
+    <dimen name="gist_detail_margin">16dp</dimen>
+    <dimen name="gist_detail_file_list_margin">20dp</dimen>
 </resources>
