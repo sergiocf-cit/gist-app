@@ -10,4 +10,6 @@
     <string name="gist_detail_files">Files</string>
     <string name="navdrawer_favorites">Favorites</string>
     <string name="navdrawer_about">About</string>
+    <string name="gitlist_title">Gist List</string>
+    <string name="gist_detail_title">Gist Detail</string>
 </resources>

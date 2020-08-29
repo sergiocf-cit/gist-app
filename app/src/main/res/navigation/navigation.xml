@@ -9,7 +9,7 @@
     <fragment
         android:id="@+id/gistListFragment"
         android:name="com.sergio.gistapp.gist.list.GistListFragment"
-        android:label="fragment_gist_list"
+        android:label="@string/gitlist_title"
         tools:layout="@layout/fragment_gist_list" >
         <action
             android:id="@+id/action_gistListFragment_to_gistDetailFragment"
@@ -19,7 +19,7 @@
     <fragment
         android:id="@+id/gistDetailFragment"
         android:name="com.sergio.gistapp.gist.detail.GistDetailFragment"
-        android:label="fragment_gist_detail"
+        android:label="@string/gist_detail_title"
         tools:layout="@layout/fragment_gist_detail" >
         <argument
             android:name="gist"
