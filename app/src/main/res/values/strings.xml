@@ -8,4 +8,6 @@
     <string name="gist_detail_owner">Owner</string>
     <string name="gist_detail_description">Description</string>
     <string name="gist_detail_files">Files</string>
+    <string name="navdrawer_favorites">Favorites</string>
+    <string name="navdrawer_about">About</string>
 </resources>
