@@ -25,4 +25,9 @@
             android:name="gist"
             app:argType="com.sergio.gistapp.gist.shared.Gist" />
     </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.sergio.gistapp.AboutFragment"
+        android:label="@string/about_title"
+        tools:layout="@layout/fragment_about" />
 </navigation>
