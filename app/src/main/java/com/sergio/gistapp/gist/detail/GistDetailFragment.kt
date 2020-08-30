@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.sergio.gistapp.R
 import com.sergio.gistapp.databinding.FragmentGistDetailBinding
-import com.sergio.gistapp.gist.shared.Gist
+import com.sergio.gistapp.gist.model.Gist
 import com.squareup.picasso.Picasso
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

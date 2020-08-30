@@ -27,7 +27,7 @@
         tools:layout="@layout/fragment_gist_detail" >
         <argument
             android:name="gist"
-            app:argType="com.sergio.gistapp.gist.shared.Gist" />
+            app:argType="com.sergio.gistapp.gist.model.Gist" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"

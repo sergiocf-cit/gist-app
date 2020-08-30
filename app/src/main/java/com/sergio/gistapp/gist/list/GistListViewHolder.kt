@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.sergio.gistapp.databinding.GistCardBinding
-import com.sergio.gistapp.gist.shared.Gist
+import com.sergio.gistapp.gist.model.Gist
 import com.squareup.picasso.Picasso
 
 class GistListViewHolder(private val binding:GistCardBinding): RecyclerView.ViewHolder(binding.root) {

@@ -3,7 +3,7 @@ package com.sergio.gistapp.gist.repository
 import androidx.paging.PagingSource
 import com.sergio.gistapp.gist.service.GistApiService
 import com.sergio.gistapp.gist.service.toModel
-import com.sergio.gistapp.gist.shared.Gist
+import com.sergio.gistapp.gist.model.Gist
 import retrofit2.HttpException
 import java.io.IOException
 

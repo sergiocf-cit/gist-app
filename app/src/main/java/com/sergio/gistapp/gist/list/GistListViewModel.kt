@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.sergio.gistapp.gist.repository.GistRepository
-import com.sergio.gistapp.gist.shared.Gist
+import com.sergio.gistapp.gist.model.Gist
 import kotlinx.coroutines.flow.Flow
 
 

@@ -2,7 +2,7 @@ package com.sergio.gistapp.gist.detail
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.sergio.gistapp.gist.shared.Gist
+import com.sergio.gistapp.gist.model.Gist
 
 class GistDetailViewModel: ViewModel() {
 

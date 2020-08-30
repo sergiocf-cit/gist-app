@@ -9,7 +9,7 @@
 
         <variable
             name="gist"
-            type="com.sergio.gistapp.gist.shared.Gist" />
+            type="com.sergio.gistapp.gist.model.Gist" />
     </data>
 
     <FrameLayout

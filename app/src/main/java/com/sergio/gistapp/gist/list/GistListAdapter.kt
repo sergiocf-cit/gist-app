@@ -3,7 +3,7 @@ package com.sergio.gistapp.gist.list
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
-import com.sergio.gistapp.gist.shared.Gist
+import com.sergio.gistapp.gist.model.Gist
 
 class GistListAdapter(private val listener: GistClickListener): PagingDataAdapter<Gist, GistListViewHolder>(GIST_COMPARATOR) {
 

@@ -4,7 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.sergio.gistapp.gist.service.GistApiService
-import com.sergio.gistapp.gist.shared.Gist
+import com.sergio.gistapp.gist.model.Gist
 import kotlinx.coroutines.flow.Flow
 
 class GistRepository(private val gistApiService: GistApiService) {

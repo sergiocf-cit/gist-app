@@ -2,7 +2,7 @@ package com.sergio.gistapp.gist.detail
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.sergio.gistapp.gist.shared.File
+import com.sergio.gistapp.gist.model.File
 
 
 class FileAdapter() : RecyclerView.Adapter<FileViewHolder>() {

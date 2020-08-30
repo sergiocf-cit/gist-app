@@ -1,4 +1,4 @@
-package com.sergio.gistapp.gist.shared
+package com.sergio.gistapp.gist.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

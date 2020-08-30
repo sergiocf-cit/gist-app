@@ -1,6 +1,6 @@
 package com.sergio.gistapp.gist.service
 
-import com.sergio.gistapp.gist.shared.File
+import com.sergio.gistapp.gist.model.File
 
 data class DynamicFileDto(val files:List<FileDto>)
 

@@ -1,10 +1,8 @@
-package com.sergio.gistapp.gist.shared
+package com.sergio.gistapp.gist.service
 
 import com.google.gson.JsonDeserializationContext
 import com.google.gson.JsonDeserializer
 import com.google.gson.JsonElement
-import com.sergio.gistapp.gist.service.DynamicFileDto
-import com.sergio.gistapp.gist.service.FileDto
 import java.lang.reflect.Type
 
 class DynamicFileDtoDeserializer : JsonDeserializer<DynamicFileDto> {

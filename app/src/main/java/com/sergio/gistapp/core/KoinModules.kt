@@ -6,7 +6,7 @@ import com.sergio.gistapp.gist.list.GistListViewModel
 import com.sergio.gistapp.gist.repository.GistRepository
 import com.sergio.gistapp.gist.service.DynamicFileDto
 import com.sergio.gistapp.gist.service.GistApiService
-import com.sergio.gistapp.gist.shared.DynamicFileDtoDeserializer
+import com.sergio.gistapp.gist.service.DynamicFileDtoDeserializer
 import okhttp3.OkHttpClient
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
