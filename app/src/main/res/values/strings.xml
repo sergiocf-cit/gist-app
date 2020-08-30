@@ -19,5 +19,6 @@
     <string name="remove_favorite">Gist remove from Favorites</string>
     <string name="my_favorites">My Favorites</string>
 
+    <string name="load_gist_error">Wooops: %s</string>
 
 </resources>

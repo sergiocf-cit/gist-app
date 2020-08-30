@@ -78,7 +78,7 @@ class GistListFragment : Fragment() {
             errorState?.let {
                 Toast.makeText(
                     requireContext(),
-                    "\uD83D\uDE28 Wooops ${it.error}",
+                    getString(R.string.load_gist_error, it.error),
                     Toast.LENGTH_LONG
                 ).show()
             }
