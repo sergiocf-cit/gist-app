@@ -8,7 +8,7 @@ This app was develop using Visual Studio 4.0
 - Navigation Component to navigate among the fragments also using safeargs and slide animation when transitioning fragments: open navigation.xml to see Navigation Graph
 - Koin for DI  
 - Retrofit with Coroutines(I'm used to RXJava but this time I decided to give it a try)
-- Picasso to load an image into ImageView
+- Picasso to load an image into ImageView and caching image.
 - MVVM to separate responsibilities for each layer
 - Lifecycle and LiveData
 - There are 3 prefixes of "POJOS":

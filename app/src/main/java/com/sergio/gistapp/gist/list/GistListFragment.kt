@@ -4,10 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
 import com.sergio.gistapp.R
 import com.sergio.gistapp.databinding.FragmentGistListBinding
 import com.sergio.gistapp.gist.shared.Gist
@@ -34,6 +36,9 @@ class GistListFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_gist_list, container, false)
 
+        binding.retryButton.setOnClickListener { adapter.retry() }
+
+
         initAdapter()
 
         search("")
@@ -46,6 +51,37 @@ class GistListFragment : Fragment() {
             header = GistLoadStateAdapter { adapter.retry() },
             footer = GistLoadStateAdapter { adapter.retry() }
         )
+
+        adapter.addLoadStateListener { loadState ->
+
+            binding.gistList.visibility = View.INVISIBLE
+            binding.progressBar.visibility = View.INVISIBLE
+            binding.retryButton.visibility = View.INVISIBLE
+
+            if(loadState.source.refresh is LoadState.NotLoading) {
+                binding.gistList.visibility = View.VISIBLE
+            }
+
+            if(loadState.source.refresh is LoadState.Loading) {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+
+            if(loadState.source.refresh is LoadState.Error) {
+                binding.retryButton.visibility = View.VISIBLE
+            }
+
+            val errorState = loadState.source.append as? LoadState.Error
+                ?: loadState.source.prepend as? LoadState.Error
+                ?: loadState.append as? LoadState.Error
+                ?: loadState.prepend as? LoadState.Error
+            errorState?.let {
+                Toast.makeText(
+                    requireContext(),
+                    "\uD83D\uDE28 Wooops ${it.error}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+        }
     }
 
     private fun search(userName: String) {
