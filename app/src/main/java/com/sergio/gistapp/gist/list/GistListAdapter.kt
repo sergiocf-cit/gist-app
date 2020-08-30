@@ -5,7 +5,9 @@ import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.sergio.gistapp.gist.model.Gist
 
-class GistListAdapter(private val listener: GistClickListener): PagingDataAdapter<Gist, GistListViewHolder>(GIST_COMPARATOR) {
+class GistListAdapter(private val listener: GistClickListener,
+                      private val saveListener: GistSaveClickListener ):
+    PagingDataAdapter<Gist, GistListViewHolder>(GIST_COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GistListViewHolder {
         return GistListViewHolder.from(parent)
@@ -13,7 +15,7 @@ class GistListAdapter(private val listener: GistClickListener): PagingDataAdapte
 
     override fun onBindViewHolder(holder: GistListViewHolder, position: Int) {
         getItem(position)?.let {
-            holder.bind(it, listener)
+            holder.bind(it, listener, saveListener)
         }
     }
 
@@ -30,4 +32,8 @@ class GistListAdapter(private val listener: GistClickListener): PagingDataAdapte
 
 class GistClickListener(val clickListener: (gist: Gist) -> Unit) {
     fun onClick(gist: Gist) = clickListener(gist)
+}
+
+class GistSaveClickListener(val clickSaveListener: (gist: Gist) -> Unit) {
+    fun onClick(gist: Gist) = clickSaveListener(gist)
 }

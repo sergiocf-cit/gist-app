@@ -15,6 +15,6 @@ This app was develop using Visual Studio 4.0
     DTO for API
     Entity for Room
     Without prefix per instance(Gist) for the model
-- Android Paging for infinite scrolling
+- Android Paging for infinite scrolling with loading and error handler
 - I had to write a JsonDeserializer for files field because the way gist retrieves it.
-
+- Room for persistence

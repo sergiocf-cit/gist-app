@@ -53,7 +53,7 @@ class GistDetailFragment : Fragment() {
 
         adapter.data =  gist.files
 
-        Picasso.get().load(gist.owner.avatar_url)
+        Picasso.get().load(gist.owner.avatarUrl)
             .into(binding.avatarImage)
     }
 

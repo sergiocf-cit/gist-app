@@ -28,7 +28,8 @@ class GistListFragment : Fragment() {
     private val gistListViewModel: GistListViewModel by viewModel()
     private lateinit var binding: FragmentGistListBinding
     private var searchJob: Job? = null
-    private val adapter = GistListAdapter(GistClickListener { navigateToGistDetail(it) })
+    private val adapter = GistListAdapter(GistClickListener { navigateToGistDetail(it) },
+        GistSaveClickListener{favoriteGist(it)})
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -97,6 +98,13 @@ class GistListFragment : Fragment() {
         this.findNavController()
             .navigate(GistListFragmentDirections.actionGistListFragmentToGistDetailFragment(gist))
 
+    }
+
+    private fun favoriteGist(gist: Gist) {
+        gistListViewModel.favoriteGist(gist)
+
+        val msg = if(gist.favorite) R.string.add_favorite else R.string.remove_favorite
+        Toast.makeText(requireContext(), msg, Toast.LENGTH_LONG).show()
     }
 }
 

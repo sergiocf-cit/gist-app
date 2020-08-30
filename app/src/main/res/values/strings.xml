@@ -15,4 +15,8 @@
     <string name="about_title">About</string>
     <string name="about_text">Android Gist App is a sample that follows the new Jetpack concepts.\n\nReach me out if you need any help:\n\nsergiocf@gmail.com</string>
 
+    <string name="add_favorite">Gist add from Favorites</string>
+    <string name="remove_favorite">Gist remove from Favorites</string>
+
+
 </resources>

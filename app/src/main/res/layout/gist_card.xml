@@ -12,6 +12,7 @@
         <variable
             name="listener"
             type="com.sergio.gistapp.gist.list.GistClickListener" />
+
     </data>
 
     <LinearLayout
@@ -87,7 +88,7 @@
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@android:drawable/btn_star_big_off" />
+                    app:srcCompat="@android:drawable/btn_star_big_off"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

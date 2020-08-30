@@ -1,6 +1,8 @@
 package com.sergio.gistapp.core
 
+import androidx.room.Room
 import com.google.gson.GsonBuilder
+import com.sergio.gistapp.gist.database.GistDatabase
 import com.sergio.gistapp.gist.detail.GistDetailViewModel
 import com.sergio.gistapp.gist.list.GistListViewModel
 import com.sergio.gistapp.gist.repository.GistRepository
@@ -8,6 +10,7 @@ import com.sergio.gistapp.gist.service.DynamicFileDto
 import com.sergio.gistapp.gist.service.GistApiService
 import com.sergio.gistapp.gist.service.DynamicFileDtoDeserializer
 import okhttp3.OkHttpClient
+import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -40,8 +43,15 @@ val appModule = module {
 
     factory { provideGistApi(get()) }
 
-    factory { GistRepository(get()) }
+    factory { GistRepository(get(), get(), get()) }
 
+    single {
+        Room.databaseBuilder(androidContext(), GistDatabase::class.java, "gist_database.db").build()
+    }
+
+    factory { get<GistDatabase>().fileDao }
+
+    factory { get<GistDatabase>().gistDao }
 
 }
 
