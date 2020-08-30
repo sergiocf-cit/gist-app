@@ -6,7 +6,8 @@ data class GistDto (val id: String, val owner: OwnerDto, val description: String
 
 fun GistDto.toModel() = Gist(
     this.id,
-    this.owner.toModel(),
+    this.owner.login,
+    this.owner.avatar_url,
     this.description,
     this.files.toModel()
 )

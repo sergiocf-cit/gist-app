@@ -17,6 +17,7 @@
 
     <string name="add_favorite">Gist add from Favorites</string>
     <string name="remove_favorite">Gist remove from Favorites</string>
+    <string name="my_favorites">My Favorites</string>
 
 
 </resources>

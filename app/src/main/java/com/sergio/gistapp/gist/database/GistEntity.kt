@@ -3,6 +3,7 @@ package com.sergio.gistapp.gist.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import com.sergio.gistapp.gist.model.Gist
 
 @Entity(tableName = "gist_table")
 data class GistEntity(
@@ -14,3 +15,4 @@ data class GistEntity(
     @ColumnInfo(name = "avatar_url")
     val avatarUrl: String
 )
+

@@ -34,4 +34,17 @@
         android:name="com.sergio.gistapp.AboutFragment"
         android:label="@string/about_title"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.sergio.gistapp.gist.favorite.FavoriteFragment"
+        android:label="@string/my_favorites" >
+        <action
+            android:id="@+id/action_favoriteFragment_to_gistDetailFragment"
+            app:destination="@id/gistDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/favoriteFragment" />
+    </fragment>
 </navigation>

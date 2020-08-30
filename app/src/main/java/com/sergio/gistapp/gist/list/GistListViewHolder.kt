@@ -23,7 +23,7 @@ class GistListViewHolder(private val binding:GistCardBinding): RecyclerView.View
 
         setFavoriteIcon(gist.favorite)
 
-        Picasso.get().load(gist.owner.avatarUrl)
+        Picasso.get().load(gist.avatarUrl)
             .into(binding.avatarImage)
 
     }

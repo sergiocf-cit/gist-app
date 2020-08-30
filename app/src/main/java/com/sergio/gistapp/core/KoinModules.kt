@@ -4,6 +4,7 @@ import androidx.room.Room
 import com.google.gson.GsonBuilder
 import com.sergio.gistapp.gist.database.GistDatabase
 import com.sergio.gistapp.gist.detail.GistDetailViewModel
+import com.sergio.gistapp.gist.favorite.FavoriteViewModel
 import com.sergio.gistapp.gist.list.GistListViewModel
 import com.sergio.gistapp.gist.repository.GistRepository
 import com.sergio.gistapp.gist.service.DynamicFileDto
@@ -26,6 +27,10 @@ val appModule = module {
 
     viewModel {
         GistDetailViewModel()
+    }
+
+    viewModel {
+        FavoriteViewModel(get())
     }
 
     single {

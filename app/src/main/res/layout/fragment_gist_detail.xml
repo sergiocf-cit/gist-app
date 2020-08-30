@@ -48,7 +48,7 @@
                 android:id="@+id/ownerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{gist.owner.login}"
+                android:text="@{gist.login}"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintBaseline_toBaselineOf="@+id/ownerLabel"

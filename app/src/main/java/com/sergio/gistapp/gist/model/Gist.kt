@@ -5,7 +5,7 @@ import com.sergio.gistapp.gist.database.GistEntity
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Gist(val id: String, val owner: Owner, val description: String?, val files: List<File>,
+data class Gist(val id: String, val login: String, val avatarUrl: String,  val description: String?, val files: List<File>,
 var favorite: Boolean = false)
     : Parcelable
 
@@ -13,6 +13,6 @@ var favorite: Boolean = false)
 fun Gist.toEntity(): GistEntity = GistEntity(
     this.id,
     this.description,
-    this.owner.login,
-    this.owner.avatarUrl
+    this.login,
+    this.avatarUrl
 )
