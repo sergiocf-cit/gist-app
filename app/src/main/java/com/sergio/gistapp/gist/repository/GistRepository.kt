@@ -1,6 +1,5 @@
 package com.sergio.gistapp.gist.repository
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.paging.Pager
@@ -10,9 +9,9 @@ import androidx.paging.map
 import com.sergio.gistapp.gist.database.FileDao
 import com.sergio.gistapp.gist.database.GistDao
 import com.sergio.gistapp.gist.database.toModel
-import com.sergio.gistapp.gist.service.GistApiService
 import com.sergio.gistapp.gist.model.Gist
 import com.sergio.gistapp.gist.model.toEntity
+import com.sergio.gistapp.gist.service.GistApiService
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
