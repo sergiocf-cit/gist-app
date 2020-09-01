@@ -20,6 +20,6 @@
     <string name="my_favorites">My Favorites</string>
 
     <string name="load_gist_error">Wooops: %s</string>
-    <string name="gist_list_gist">Gist</string>
+    <string name="gist_list_gist">Search by User</string>
 
 </resources>
