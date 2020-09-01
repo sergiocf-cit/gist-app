@@ -19,30 +19,32 @@ but this time I decided to try.
 - Picasso loads images into ImageView and also cache them for offline view. Specially at Favorite
 page.
 
-- MVVM Pattern is used to separate responsibilities among the layers and it also helps 
-to survives configuration change. We don't need manually save the in the Bundle in case
+- MVVM Pattern is used to separate responsibilities among the layers and the ViewModel Component helps 
+to survive configuration change. We don't need manually save in the Bundle in case
 a rotation per example.
 
-- LiveData is preferred used once it is lifecycle aware, so we don't need to dispose resource.
+- LiveData is preferred used once its is lifecycle aware, so we don't need to dispose resource.
 
 - There are 3 kind of "Pojos" and each one has it layer scope:
-    DTO is used in Service Api layer(Retrofit).
-    Entity is used in Database layer(Room)
-    Model is used in ViewModel layer(There is no prefix in the class name)
+    - DTO is used in Service Api layer(Retrofit).
+    - Entity is used in Database layer(Room)
+    - Model is used in ViewModel layer(There is no prefix in the class name)
 
-Summarizing the viewmodels and up components like fragments only know models.
-The Repository is responsible abstract and convert these objects like: DTO to Model,
-Entity to Model or Model to Entity in case of storing data.     
+- Summarizing the viewmodels and up components like fragments only know models.
+The Repository layer is responsible for abstract and convert these objects like: 
+    - DTO to Model, Entity to Model or Model to Entity in case of storing data.     
 
 - Android Paging is used for infinite scrolling, loading state and error handler.
 
-- JsonDeserializer is used for parse the files field because it dynamic in Gist Api.
+- JsonDeserializer is used for parse the files field because it dynamic in Gist Api so it has a extra
+dev effort to deserialize this field.
 
 - Room is used for persistence.
 
-- It has testes for database following this approach: https://developer.android.com/training/data-storage/room/testing-db.
+- It has tests for database following this approach: https://developer.android.com/training/data-storage/room/testing-db.
 Also the LiveData getOrAwaitValue idea is used for testing livedata. 
 
-- It has unit tests for repositories and viewmodel using different ways to mock data.
+- It has unit tests for repositories and viewmodel using different ways to mock data and handle
+coroutine functions per example.
 
-- It has two flavours "free" and "paid". Search per user is only visible for paid version.
+- It has two flavours "free" and "paid". *Search per user is only visible for paid version.*
