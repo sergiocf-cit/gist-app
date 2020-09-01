@@ -36,8 +36,8 @@ The Repository layer is responsible for abstract and convert these objects like:
 
 - Android Paging is used for infinite scrolling, loading state and error handler.
 
-- JsonDeserializer is used for parse the files field because it dynamic in Gist Api so it has a extra
-dev effort to deserialize this field.
+- JsonDeserializer is used for parse the files field because it is dynamic in Gist Api so it has a extra
+effort to deserialize this field.
 
 - Room is used for persistence.
 
