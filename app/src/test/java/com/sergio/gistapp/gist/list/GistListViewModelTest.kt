@@ -69,7 +69,7 @@ class GistListViewModelTest {
     @Test
     fun shouldGetPage ()  = runBlocking {
         val page = PagingData.from(listOf(gist))
-        Mockito.`when`(gistRepository.getAllStream()).thenReturn(flowOf(page) )
+        Mockito.`when`(gistRepository.getAllStream("")).thenReturn(flowOf(page) )
         val result = gistListViewModel.getAll("")
         result.collect {
             Assert.assertNotNull(it)

@@ -1,7 +1,7 @@
 # gist-app
 A simple Android app following the best and new practices recommended by Jetpack. 
 
-This app was develop using Visual Studio 4.0
+This app was develop using Visual Studio 4.0 and tested using emulator Pixel 3 API 29.
 
 # Main architecture decisions
 
@@ -21,4 +21,5 @@ This app was develop using Visual Studio 4.0
 - I wrote database tests following this approach https://developer.android.com/training/data-storage/room/testing-db
 plus LiveData getOrAwaitValue. 
 - It has unit tests for repositories and viewmodel. We don't have to much rules in this app but
-it uses different ways to mock data per example Courotunes .
+it uses different ways to mock data per example Courotunes.
+- I used flavor for a free and paid version. The paid version you can search by user.

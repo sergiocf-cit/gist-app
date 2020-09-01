@@ -39,6 +39,21 @@ android {
         jvmTarget = "1.8"
         freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
     }
+
+    flavorDimensions "version"
+
+    productFlavors {
+        free {
+            dimension "version"
+            buildConfigField 'boolean', 'IS_PAID', 'false'
+        }
+
+        paid {
+            dimension "version"
+            buildConfigField 'boolean', 'IS_PAID', 'true'
+        }
+    }
+
 }
 
 dependencies {

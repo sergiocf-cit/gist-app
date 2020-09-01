@@ -15,14 +15,17 @@ import java.io.IOException
 private const val GITHUB_STARTING_PAGE_INDEX = 0
 
 class GistPagingSource(
-    private val service: GistApiService
+    private val service: GistApiService,
+    private val user: String
 ) : PagingSource<Int, Gist>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Gist> {
         val position = params.key ?: GITHUB_STARTING_PAGE_INDEX
         return try {
 
-            val gist = service.getAll(position, params.loadSize).map { it.toModel() }
+            val gist = if (user.isBlank()) service.getAll(position, params.loadSize)
+                .map { it.toModel() }
+            else service.getByUser(user, position, params.loadSize).map { it.toModel() }
 
             LoadResult.Page(
                 data = gist,

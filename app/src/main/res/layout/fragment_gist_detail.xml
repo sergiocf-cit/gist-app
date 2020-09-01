@@ -99,16 +99,18 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/fileList"
                 android:layout_width="match_parent"
-                android:layout_height="550dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/gist_detail_file_list_margin"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="@dimen/gist_detail_file_list_margin"
                 android:layout_marginEnd="@dimen/gist_detail_file_list_margin"
                 android:layout_marginBottom="@dimen/gist_detail_file_list_margin"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/filesLabel" />
+                app:layout_constraintTop_toBottomOf="@+id/filesLabel"
+                app:layout_constraintVertical_bias="0.051" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

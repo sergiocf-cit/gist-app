@@ -23,10 +23,10 @@ class GistRepository(
     private val fileDao: FileDao
 ) {
 
-    fun getAllStream(): Flow<PagingData<Gist>> {
+    fun getAllStream(user: String): Flow<PagingData<Gist>> {
         return Pager(
             config = PagingConfig(pageSize = NETWORK_PAGE_SIZE, enablePlaceholders = false),
-            pagingSourceFactory = { GistPagingSource(gistApiService) }
+            pagingSourceFactory = { GistPagingSource(gistApiService, user) }
         ).flow.map {
             markFavoriteGists(it)
         }
@@ -45,9 +45,9 @@ class GistRepository(
         fileDao.deleteAllFiles(gist.id)
     }
 
-    fun getAllFavorites() : LiveData<List<Gist>> {
-        return Transformations.map(gistDao.getAllGistsWithFiles()) {
-            list -> list.map { it.toModel() }
+    fun getAllFavorites(): LiveData<List<Gist>> {
+        return Transformations.map(gistDao.getAllGistsWithFiles()) { list ->
+            list.map { it.toModel() }
         }
     }
 

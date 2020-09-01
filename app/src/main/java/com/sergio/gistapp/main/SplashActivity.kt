@@ -12,7 +12,7 @@ import com.sergio.gistapp.R
 import com.sergio.gistapp.gist.GistActivity
 import kotlinx.android.synthetic.main.activity_spash.*
 
-const val SPLASH_DELAY: Long = 1
+const val SPLASH_DELAY: Long = 6000
 
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -71,7 +71,7 @@ class GistRepositoryTest {
         Mockito.verify(gistDao).delete(any())
         Mockito.verify(fileDao).deleteAllFiles(MockitoHelper.capture(deleteArgumentCaptor))
 
-        MatcherAssert.assertThat("gistId", Matchers.equalTo(deleteArgumentCaptor.value))
+        Assert.assertTrue("gistId" == deleteArgumentCaptor.value)
     }
 
     @Test
@@ -94,7 +94,7 @@ class GistRepositoryTest {
 
         val result = gistRepository.getAllFavorites().getOrAwaitValue()
 
-        Assert.assertThat(result[0], CoreMatchers.equalTo(myFavorite))
+        Assert.assertTrue(result[0] == myFavorite)
     }
 
 }

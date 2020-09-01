@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">gistapp</string>
+    <string name="app_name">Gist App</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="gist_card_save">Save</string>
     <string name="logo">Logo</string>
@@ -20,5 +20,6 @@
     <string name="my_favorites">My Favorites</string>
 
     <string name="load_gist_error">Wooops: %s</string>
+    <string name="gist_list_gist">Gist</string>
 
 </resources>
